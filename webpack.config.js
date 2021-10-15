@@ -25,23 +25,20 @@ module.exports = {
     new ModuleFederationPlugin({
       
         // For remotes (please adjust)
-        // name: "mfeIdentity",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },        
-        
-        // For hosts (please adjust)
-        // remotes: {
-        //     "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
-
-        // },
+        name: "mfeIdentity",
+        filename: "remoteEntry.js",
+        exposes: {
+            './Module': './/src/app/identity/identity.module.ts',
+        },        
 
         shared: share({
-          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          "@angular/core": { singleton: true, strictVersion: true }, 
+          "@angular/common": { singleton: true, strictVersion: true , requiredVersion: '12.1.1'}, 
+          "@angular/common/http": { singleton: true, strictVersion: true }, 
+          "@angular/router": { singleton: true, strictVersion: true },
+          "angular-auth-oidc-client": { singleton: true, strictVersion: true },
+          "@angular/cdk": { singleton: true, strictVersion: true },
+          "@angular/material": { singleton: true, strictVersion: true },
 
           ...sharedMappings.getDescriptors()
         })
