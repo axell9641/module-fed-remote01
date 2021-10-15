@@ -20,7 +20,7 @@ export class IdentityListComponent implements OnInit , AfterViewInit {
   constructor(private indetityService: IdentitiesService) { }
 
   ngOnInit(): void {
-    this.indetityService.getIdentities('').subscribe (result => {
+    this.indetityService.getIdentities().subscribe (result => {
       this.result = result;
       this.dataSource.data = this.result.didJwk;
     });

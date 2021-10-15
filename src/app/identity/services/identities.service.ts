@@ -22,9 +22,7 @@ export class IdentitiesService {
     this.baseUrl = `${environment.apiUrl}/ms-identity`;
   }
 
-  getIdentities(userId: string) {
-    //TODO usar userId del contexto
-    const headers = new HttpHeaders().set('user-id', '1234567890');
-    return this.http.get<ListIdentitiesResponse>(`${this.baseUrl}/identity`, { headers });
+  getIdentities() {   
+    return this.http.get<ListIdentitiesResponse>(`${this.baseUrl}/identity`);
   }
 }
