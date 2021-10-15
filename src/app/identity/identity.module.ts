@@ -7,6 +7,7 @@ import { MatSortModule } from '@angular/material/sort';
 
 import { IdentityRoutingModule } from './identity-routing.module';
 import { IdentityListComponent } from './identity-list/identity-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { IdentityListComponent } from './identity-list/identity-list.component';
   imports: [
     CommonModule,
     IdentityRoutingModule,
+    HttpClientModule,
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
